@@ -135,9 +135,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var smoothScroll = function (el, duration, callback, context, axis) {
 	        duration = duration || 500;
 	        context = context || window;
-	        axis = axis === 'both' ? 0b11 : axis === 'y' ? 0b01 : axis === 'x' ? 0b10 : 0b01;
-	        var enableY = axis & 0b01,
-	            enableX = axis & 0b10;
+	        axis = axis === 'both' ? 3 : axis === 'y' ? 1 : axis === 'x' ? 2 : 1;
+	        var enableY = axis & 1,
+	            enableX = axis & 2;
 	        var startY = context.scrollTop || window.pageYOffset;
 	        var startX = context.screenLeft || window.pageXOffset;
 	        if (typeof el === 'number') {
